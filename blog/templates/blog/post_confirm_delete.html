@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Postu sil{% endblock %}
+
+{% block content %}
+  <h1>Postu sil</h1>
+  <p>"{{ post.title }}" postunu silmək istədiyinə əminsən?</p>
+
+  <div class="actions">
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-red">Bəli, sil</button>
+    </form>
+    <a href="{{ post.get_absolute_url }}" class="btn btn-gray">Xeyr, qayıt</a>
+  </div>
+{% endblock %}
